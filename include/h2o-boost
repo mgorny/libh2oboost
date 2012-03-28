@@ -37,10 +37,13 @@ namespace h2o
 			typedef ::boost::units::quantity<T> K;
 		};
 
-		class H2O : public ::h2o::H2O
+		class H2O : private ::h2o::H2O
 		{
 		public:
 			H2O(units::MPa p, units::K T);
+
+			units::MPa p() const;
+			units::K T() const;
 		};
 	};
 };
