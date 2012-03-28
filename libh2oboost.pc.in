@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: @PACKAGE_NAME@
+Description: C++/Boost bindings for libh2o
+Version: @VERSION@
+Requires.private: libh2oxx
+
+Libs: -L${libdir} -lh2oboost
+Cflags: -I${includedir}/h2o/cxx
