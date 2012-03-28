@@ -29,3 +29,16 @@ quantity::K H2O::T() const
 
 	return T;
 }
+
+quantity::dimless H2O::x() const
+{
+	return ::h2o::H2O::x();
+}
+
+quantity::kg_m3 H2O::rho() const
+{
+	quantity::kg_m3 rho(::h2o::H2O::rho()
+			* ::boost::units::si::kilogrammes_per_cubic_metre);
+
+	return rho;
+}
