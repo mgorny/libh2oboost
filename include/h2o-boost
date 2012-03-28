@@ -24,6 +24,11 @@ namespace h2o
 			quantity::K T() const;
 			quantity::dimless x() const;
 			quantity::kg_m3 rho() const;
+
+			quantity::m3_kg v() const;
+			quantity::kJ_kg u() const;
+			quantity::kJ_kg h() const;
+			quantity::kJ_kgK s() const;
 		};
 	};
 };

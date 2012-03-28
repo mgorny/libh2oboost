@@ -11,6 +11,10 @@
 #include <boost/units/make_scaled_unit.hpp>
 #include <boost/units/quantity.hpp>
 #include <boost/units/static_rational.hpp>
+#include <boost/units/physical_dimensions/specific_energy.hpp>
+#include <boost/units/physical_dimensions/specific_heat_capacity.hpp>
+#include <boost/units/physical_dimensions/specific_volume.hpp>
+#include <boost/units/systems/si/base.hpp>
 #include <boost/units/systems/si/dimensionless.hpp>
 #include <boost/units/systems/si/mass_density.hpp>
 #include <boost/units/systems/si/pressure.hpp>
@@ -34,6 +38,39 @@ namespace h2o
 			typedef ::boost::units::si::temperature K;
 			typedef ::boost::units::si::dimensionless dimless;
 			typedef ::boost::units::si::mass_density kg_m3;
+
+			typedef ::boost::units::unit
+			<
+				::boost::units::specific_volume_dimension,
+				::boost::units::si::system
+			> m3_kg;
+			typedef ::boost::units::unit
+			<
+				::boost::units::specific_energy_dimension,
+				::boost::units::si::system
+			> J_kg;
+			typedef ::boost::units::unit
+			<
+				::boost::units::specific_heat_capacity_dimension,
+				::boost::units::si::system
+			> J_kgK;
+
+			typedef ::boost::units::make_scaled_unit
+			<
+				J_kg,
+				::boost::units::scale
+				<
+					10, ::boost::units::static_rational<3>
+				>
+			>::type kJ_kg;
+			typedef ::boost::units::make_scaled_unit
+			<
+				J_kgK,
+				::boost::units::scale
+				<
+					10, ::boost::units::static_rational<3>
+				>
+			>::type kJ_kgK;
 		};
 
 		namespace unit
@@ -41,6 +78,10 @@ namespace h2o
 			static const unit_type::MPa MPa;
 			static const unit_type::K K;
 			static const unit_type::kg_m3 kg_m3;
+
+			static const unit_type::m3_kg m3_kg;
+			static const unit_type::kJ_kg kJ_kg;
+			static const unit_type::kJ_kgK kJ_kgK;
 		};
 
 		namespace quantity
@@ -49,6 +90,10 @@ namespace h2o
 			typedef ::boost::units::quantity<unit_type::K> K;
 			typedef ::boost::units::quantity<unit_type::dimless> dimless;
 			typedef ::boost::units::quantity<unit_type::kg_m3> kg_m3;
+
+			typedef ::boost::units::quantity<unit_type::m3_kg> m3_kg;
+			typedef ::boost::units::quantity<unit_type::kJ_kg> kJ_kg;
+			typedef ::boost::units::quantity<unit_type::kJ_kgK> kJ_kgK;
 		};
 	};
 };

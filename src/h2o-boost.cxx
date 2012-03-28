@@ -35,3 +35,23 @@ quantity::kg_m3 H2O::rho() const
 {
 	return quantity::kg_m3(::h2o::H2O::rho() * unit::kg_m3);
 }
+
+quantity::m3_kg H2O::v() const
+{
+	return quantity::m3_kg(::h2o::H2O::v() * unit::m3_kg);
+}
+
+quantity::kJ_kg H2O::u() const
+{
+	return quantity::kJ_kg(::h2o::H2O::u() * unit::kJ_kg);
+}
+
+quantity::kJ_kg H2O::h() const
+{
+	return quantity::kJ_kg(::h2o::H2O::h() * unit::kJ_kg);
+}
+
+quantity::kJ_kgK H2O::s() const
+{
+	return quantity::kJ_kgK(::h2o::H2O::s() * unit::kJ_kgK);
+}
