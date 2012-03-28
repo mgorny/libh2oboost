@@ -20,7 +20,7 @@ namespace h2o
 {
 	namespace boost
 	{
-		namespace units
+		namespace unit
 		{
 			typedef ::boost::units::make_scaled_unit
 			<
@@ -29,21 +29,24 @@ namespace h2o
 				<
 					10, ::boost::units::static_rational<6>
 				>
-			>::type p;
+			>::type MPa;
 
-			typedef ::boost::units::si::temperature T;
+			typedef ::boost::units::si::temperature K;
+		};
 
-			typedef ::boost::units::quantity<p> MPa;
-			typedef ::boost::units::quantity<T> K;
+		namespace quantity
+		{
+			typedef ::boost::units::quantity<unit::MPa> MPa;
+			typedef ::boost::units::quantity<unit::K> K;
 		};
 
 		class H2O : private ::h2o::H2O
 		{
 		public:
-			H2O(units::MPa p, units::K T);
+			H2O(quantity::MPa p, quantity::K T);
 
-			units::MPa p() const;
-			units::K T() const;
+			quantity::MPa p() const;
+			quantity::K T() const;
 		};
 	};
 };
