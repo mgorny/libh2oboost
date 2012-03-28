@@ -20,7 +20,7 @@ namespace h2o
 {
 	namespace boost
 	{
-		namespace unit
+		namespace unit_type
 		{
 			typedef ::boost::units::make_scaled_unit
 			<
@@ -36,12 +36,19 @@ namespace h2o
 			typedef ::boost::units::si::mass_density kg_m3;
 		};
 
+		namespace unit
+		{
+			static const unit_type::MPa MPa;
+			static const unit_type::K K;
+			static const unit_type::kg_m3 kg_m3;
+		};
+
 		namespace quantity
 		{
-			typedef ::boost::units::quantity<unit::MPa> MPa;
-			typedef ::boost::units::quantity<unit::K> K;
-			typedef ::boost::units::quantity<unit::dimless> dimless;
-			typedef ::boost::units::quantity<unit::kg_m3> kg_m3;
+			typedef ::boost::units::quantity<unit_type::MPa> MPa;
+			typedef ::boost::units::quantity<unit_type::K> K;
+			typedef ::boost::units::quantity<unit_type::dimless> dimless;
+			typedef ::boost::units::quantity<unit_type::kg_m3> kg_m3;
 		};
 	};
 };

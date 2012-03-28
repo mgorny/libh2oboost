@@ -18,16 +18,12 @@ H2O::H2O(quantity::MPa p, quantity::K T)
 
 quantity::MPa H2O::p() const
 {
-	quantity::MPa p(::h2o::H2O::p() * 1E6 * ::boost::units::si::pascals);
-
-	return p;
+	return quantity::MPa(::h2o::H2O::p() * unit::MPa);
 }
 
 quantity::K H2O::T() const
 {
-	quantity::K T(::h2o::H2O::T() * ::boost::units::si::kelvins);
-
-	return T;
+	return quantity::K(::h2o::H2O::T() * unit::K);
 }
 
 quantity::dimless H2O::x() const
@@ -37,8 +33,5 @@ quantity::dimless H2O::x() const
 
 quantity::kg_m3 H2O::rho() const
 {
-	quantity::kg_m3 rho(::h2o::H2O::rho()
-			* ::boost::units::si::kilogrammes_per_cubic_metre);
-
-	return rho;
+	return quantity::kg_m3(::h2o::H2O::rho() * unit::kg_m3);
 }
