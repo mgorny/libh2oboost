@@ -10,6 +10,8 @@ AC_PROG_CXX
 
 LT_INIT([disable-static])
 
+BOOST_REQUIRE
+
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile libh2oboost.pc])
 AC_OUTPUT

@@ -1,0 +1,50 @@
+/* libh2oboost -- steam & water properties
+ * (c) 2012 Michał Górny
+ * Released under the terms of the 2-clause BSD license
+ */
+
+#pragma once
+
+#ifndef _H2O_BOOST_HXX
+#define _H2O_BOOST_HXX 1
+
+#include <h2o>
+
+#include <boost/units/make_scaled_unit.hpp>
+#include <boost/units/quantity.hpp>
+#include <boost/units/static_rational.hpp>
+#include <boost/units/systems/si/pressure.hpp>
+#include <boost/units/systems/si/temperature.hpp>
+
+namespace h2o
+{
+	namespace boost
+	{
+		namespace units
+		{
+			typedef ::boost::units::make_scaled_unit
+			<
+				::boost::units::si::pressure,
+				::boost::units::scale
+				<
+					10, ::boost::units::static_rational<6>
+				>
+			>::type p;
+
+			typedef ::boost::units::si::temperature T;
+
+			typedef ::boost::units::quantity<p> MPa;
+			typedef ::boost::units::quantity<T> K;
+		};
+
+		class H2O : public ::h2o::H2O
+		{
+		public:
+			H2O(units::MPa p, units::K T);
+		};
+	};
+};
+
+#endif /*_H2O_BOOST_HXX*/
+
+// vim:syn=cpp
