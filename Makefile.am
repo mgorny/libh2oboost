@@ -11,6 +11,6 @@ libh2oboost_la_CPPFLAGS = $(LIBH2OXX_CFLAGS) $(BOOST_CPPFLAGS) \
 libh2oboost_la_LIBADD = $(LIBH2OXX_LIBS)
 libh2oboost_la_LDFLAGS = -version-info 0:0:0
 
-h2oxx_HEADERS = include/h2o-boost
+h2oxx_HEADERS = include/h2o-boost include/h2o-units
 
 pkgconfig_DATA = libh2oboost.pc
