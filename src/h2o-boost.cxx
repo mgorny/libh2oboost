@@ -16,6 +16,31 @@ H2O::H2O(quantity::MPa p, quantity::K T)
 {
 }
 
+H2O::H2O(::h2o::H2O other)
+	: ::h2o::H2O(other)
+{
+}
+
+H2O H2O::Tx(quantity::K T, quantity::dimless x)
+{
+	return ::h2o::H2O::Tx(T.value(), x.value());
+}
+
+H2O H2O::ph(quantity::MPa p, quantity::kJ_kg h)
+{
+	return ::h2o::H2O::ph(p.value(), h.value());
+}
+
+H2O H2O::ps(quantity::MPa p, quantity::kJ_kg s)
+{
+	return ::h2o::H2O::ps(p.value(), s.value());
+}
+
+H2O H2O::rhoT(quantity::kg_m3 rho, quantity::K T)
+{
+	return ::h2o::H2O::rhoT(rho.value(), T.value());
+}
+
 quantity::MPa H2O::p() const
 {
 	return quantity::MPa(::h2o::H2O::p() * unit::MPa);
