@@ -8,6 +8,7 @@
 #ifndef _H2O_UNITS_HXX
 #define _H2O_UNITS_HXX 1
 
+#include <boost/units/absolute.hpp>
 #include <boost/units/make_scaled_unit.hpp>
 #include <boost/units/quantity.hpp>
 #include <boost/units/static_rational.hpp>
@@ -35,7 +36,8 @@ namespace h2o
 				>
 			>::type MPa;
 
-			typedef ::boost::units::si::temperature K;
+			typedef ::boost::units::absolute
+					< ::boost::units::si::temperature > K;
 			typedef ::boost::units::si::dimensionless dimless;
 			typedef ::boost::units::si::mass_density kg_m3;
 
