@@ -20,6 +20,7 @@
 #include <boost/units/systems/si/mass_density.hpp>
 #include <boost/units/systems/si/pressure.hpp>
 #include <boost/units/systems/si/temperature.hpp>
+#include <boost/units/systems/temperature/celsius.hpp>
 
 namespace h2o
 {
@@ -73,10 +74,25 @@ namespace h2o
 					10, ::boost::units::static_rational<3>
 				>
 			>::type kJ_kgK;
+
+			// auxiliary units
+
+			typedef ::boost::units::make_scaled_unit
+			<
+				::boost::units::si::pressure,
+				::boost::units::scale
+				<
+					10, ::boost::units::static_rational<5>
+				>
+			>::type bar;
+			typedef ::boost::units::absolute
+					< ::boost::units::celsius::temperature > degC;
 		};
 
 		namespace unit
 		{
+			// base/preferred units
+
 			static const unit_type::MPa MPa;
 			static const unit_type::K K;
 			static const unit_type::kg_m3 kg_m3;
@@ -84,7 +100,12 @@ namespace h2o
 			static const unit_type::m3_kg m3_kg;
 			static const unit_type::kJ_kg kJ_kg;
 			static const unit_type::kJ_kgK kJ_kgK;
-		};
+
+			// auxiliary units
+
+			static const unit_type::bar bar;
+			static const unit_type::degC degC;
+		}
 
 		namespace quantity
 		{
@@ -96,6 +117,11 @@ namespace h2o
 			typedef ::boost::units::quantity<unit_type::m3_kg> m3_kg;
 			typedef ::boost::units::quantity<unit_type::kJ_kg> kJ_kg;
 			typedef ::boost::units::quantity<unit_type::kJ_kgK> kJ_kgK;
+
+			// auxiliary units
+
+			typedef ::boost::units::quantity<unit_type::bar> bar;
+			typedef ::boost::units::quantity<unit_type::degC> degC;
 		};
 	};
 };
