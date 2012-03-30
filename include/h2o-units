@@ -85,6 +85,14 @@ namespace h2o
 					10, ::boost::units::static_rational<5>
 				>
 			>::type bar;
+			typedef ::boost::units::make_scaled_unit
+			<
+				::boost::units::si::pressure,
+				::boost::units::scale
+				<
+					10, ::boost::units::static_rational<3>
+				>
+			>::type kPa;
 			typedef ::boost::units::absolute
 					< ::boost::units::celsius::temperature > degC;
 		};
@@ -104,6 +112,7 @@ namespace h2o
 			// auxiliary units
 
 			static const unit_type::bar bar;
+			static const unit_type::kPa kPa;
 			static const unit_type::degC degC;
 		}
 
@@ -121,6 +130,7 @@ namespace h2o
 			// auxiliary units
 
 			typedef ::boost::units::quantity<unit_type::bar> bar;
+			typedef ::boost::units::quantity<unit_type::kPa> kPa;
 			typedef ::boost::units::quantity<unit_type::degC> degC;
 		};
 	};
