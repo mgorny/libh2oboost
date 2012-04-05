@@ -26,6 +26,11 @@ H2O H2O::Tx(quantity::K T, quantity::dimless x)
 	return ::h2o::H2O::Tx(T.value(), x.value());
 }
 
+H2O H2O::px(quantity::MPa p, quantity::dimless x)
+{
+	return ::h2o::H2O::px(p.value(), x.value());
+}
+
 H2O H2O::ph(quantity::MPa p, quantity::kJ_kg h)
 {
 	return ::h2o::H2O::ph(p.value(), h.value());

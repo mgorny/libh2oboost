@@ -22,6 +22,7 @@ namespace h2o
 		public:
 			H2O(quantity::MPa p, quantity::K T);
 			static H2O Tx(quantity::K T, quantity::dimless x);
+			static H2O px(quantity::MPa p, quantity::dimless x);
 			static H2O ph(quantity::MPa p, quantity::kJ_kg h);
 			static H2O ps(quantity::MPa p, quantity::kJ_kg s);
 			static H2O rhoT(quantity::kg_m3 rho, quantity::K T);
