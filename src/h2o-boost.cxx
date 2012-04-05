@@ -36,7 +36,7 @@ H2O H2O::ph(quantity::MPa p, quantity::kJ_kg h)
 	return ::h2o::H2O::ph(p.value(), h.value());
 }
 
-H2O H2O::ps(quantity::MPa p, quantity::kJ_kg s)
+H2O H2O::ps(quantity::MPa p, quantity::kJ_kgK s)
 {
 	return ::h2o::H2O::ps(p.value(), s.value());
 }
