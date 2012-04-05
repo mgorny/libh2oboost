@@ -17,15 +17,13 @@ namespace h2o
 	{
 		class H2O : private ::h2o::H2O
 		{
-			H2O(::h2o::H2O other);
-
 		public:
 			H2O(quantity::MPa p, quantity::K T);
-			static H2O Tx(quantity::K T, quantity::dimless x);
-			static H2O px(quantity::MPa p, quantity::dimless x);
-			static H2O ph(quantity::MPa p, quantity::kJ_kg h);
-			static H2O ps(quantity::MPa p, quantity::kJ_kgK s);
-			static H2O rhoT(quantity::kg_m3 rho, quantity::K T);
+			H2O(quantity::K T, quantity::dimless x);
+			H2O(quantity::MPa p, quantity::dimless x);
+			H2O(quantity::MPa p, quantity::kJ_kg h);
+			H2O(quantity::MPa p, quantity::kJ_kgK s);
+			H2O(quantity::kg_m3 rho, quantity::K T);
 
 			quantity::MPa p() const;
 			quantity::K T() const;

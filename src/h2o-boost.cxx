@@ -16,34 +16,29 @@ H2O::H2O(quantity::MPa p, quantity::K T)
 {
 }
 
-H2O::H2O(::h2o::H2O other)
-	: ::h2o::H2O(other)
+H2O::H2O(quantity::K T, quantity::dimless x)
+	: ::h2o::H2O(::h2o::H2O::Tx(T.value(), x.value()))
 {
 }
 
-H2O H2O::Tx(quantity::K T, quantity::dimless x)
+H2O::H2O(quantity::MPa p, quantity::dimless x)
+	: ::h2o::H2O(::h2o::H2O::px(p.value(), x.value()))
 {
-	return ::h2o::H2O::Tx(T.value(), x.value());
 }
 
-H2O H2O::px(quantity::MPa p, quantity::dimless x)
+H2O::H2O(quantity::MPa p, quantity::kJ_kg h)
+	: ::h2o::H2O(::h2o::H2O::ph(p.value(), h.value()))
 {
-	return ::h2o::H2O::px(p.value(), x.value());
 }
 
-H2O H2O::ph(quantity::MPa p, quantity::kJ_kg h)
+H2O::H2O(quantity::MPa p, quantity::kJ_kgK s)
+	: ::h2o::H2O(::h2o::H2O::ps(p.value(), s.value()))
 {
-	return ::h2o::H2O::ph(p.value(), h.value());
 }
 
-H2O H2O::ps(quantity::MPa p, quantity::kJ_kgK s)
+H2O::H2O(quantity::kg_m3 rho, quantity::K T)
+	: ::h2o::H2O(::h2o::H2O::rhoT(rho.value(), T.value()))
 {
-	return ::h2o::H2O::ps(p.value(), s.value());
-}
-
-H2O H2O::rhoT(quantity::kg_m3 rho, quantity::K T)
-{
-	return ::h2o::H2O::rhoT(rho.value(), T.value());
 }
 
 quantity::MPa H2O::p() const
