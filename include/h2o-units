@@ -95,7 +95,7 @@ namespace h2o
 			>::type kPa;
 			typedef ::boost::units::absolute
 					< ::boost::units::celsius::temperature > degC;
-		};
+		}
 
 		namespace unit
 		{
@@ -132,9 +132,9 @@ namespace h2o
 			typedef ::boost::units::quantity<unit_type::bar> bar;
 			typedef ::boost::units::quantity<unit_type::kPa> kPa;
 			typedef ::boost::units::quantity<unit_type::degC> degC;
-		};
-	};
-};
+		}
+	}
+}
 
 #endif /*_H2O_UNITS_HXX*/
 

@@ -35,8 +35,8 @@ namespace h2o
 			quantity::kJ_kg h() const;
 			quantity::kJ_kgK s() const;
 		};
-	};
-};
+	}
+}
 
 #endif /*_H2O_BOOST_HXX*/
 
