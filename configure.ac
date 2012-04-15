@@ -8,7 +8,7 @@ PKG_CHECK_MODULES([LIBH2OXX], [libh2oxx])
 
 AC_PROG_CXX
 
-LT_INIT([disable-static])
+LT_INIT([disable-static win32-dll])
 
 BOOST_REQUIRE
 

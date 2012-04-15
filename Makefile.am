@@ -9,7 +9,7 @@ libh2oboost_la_SOURCES = src/h2o-boost.cxx
 libh2oboost_la_CPPFLAGS = $(LIBH2OXX_CFLAGS) $(BOOST_CPPFLAGS) \
 		-I$(top_srcdir)/include
 libh2oboost_la_LIBADD = $(LIBH2OXX_LIBS)
-libh2oboost_la_LDFLAGS = -version-info 0:0:0
+libh2oboost_la_LDFLAGS = -version-info 0:0:0 -no-undefined
 
 h2oxx_HEADERS = include/h2o-boost include/h2o-units
 
