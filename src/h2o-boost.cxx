@@ -15,6 +15,11 @@ H2O::H2O()
 {
 }
 
+H2O::H2O(::h2o::H2O other)
+	: ::h2o::H2O(other)
+{
+}
+
 H2O::H2O(quantity::MPa p, quantity::K T)
 	: ::h2o::H2O(p.value(), T.value())
 {
@@ -88,4 +93,14 @@ quantity::kJ_kg H2O::h() const
 quantity::kJ_kgK H2O::s() const
 {
 	return quantity::kJ_kgK(::h2o::H2O::s() * unit::kJ_kgK);
+}
+
+H2O H2O::expand(quantity::MPa pout) const
+{
+	return ::h2o::H2O::expand(pout.value());
+}
+
+H2O H2O::expand(quantity::MPa pout, quantity::dimless eta) const
+{
+	return ::h2o::H2O::expand(pout.value(), eta.value());
 }

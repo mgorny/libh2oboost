@@ -17,6 +17,8 @@ namespace h2o
 	{
 		class H2O : private ::h2o::H2O
 		{
+			H2O(::h2o::H2O other);
+
 		public:
 			H2O();
 			H2O(quantity::MPa p, quantity::K T);
@@ -36,6 +38,9 @@ namespace h2o
 			quantity::kJ_kg u() const;
 			quantity::kJ_kg h() const;
 			quantity::kJ_kgK s() const;
+
+			H2O expand(quantity::MPa pout) const;
+			H2O expand(quantity::MPa pout, quantity::dimless eta) const;
 		};
 	}
 }
