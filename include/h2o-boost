@@ -24,6 +24,7 @@ namespace h2o
 			H2O(quantity::MPa p, quantity::dimless x);
 			H2O(quantity::MPa p, quantity::kJ_kg h);
 			H2O(quantity::MPa p, quantity::kJ_kgK s);
+			H2O(quantity::kJ_kg h, quantity::kJ_kgK s);
 			H2O(quantity::kg_m3 rho, quantity::K T);
 
 			quantity::MPa p() const;

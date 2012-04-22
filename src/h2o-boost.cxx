@@ -40,6 +40,11 @@ H2O::H2O(quantity::MPa p, quantity::kJ_kgK s)
 {
 }
 
+H2O::H2O(quantity::kJ_kg h, quantity::kJ_kgK s)
+	: ::h2o::H2O(::h2o::H2O::hs(h.value(), s.value()))
+{
+}
+
 H2O::H2O(quantity::kg_m3 rho, quantity::K T)
 	: ::h2o::H2O(::h2o::H2O::rhoT(rho.value(), T.value()))
 {
