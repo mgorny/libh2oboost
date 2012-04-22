@@ -11,6 +11,10 @@
 
 using namespace h2o::boost;
 
+H2O::H2O()
+{
+}
+
 H2O::H2O(quantity::MPa p, quantity::K T)
 	: ::h2o::H2O(p.value(), T.value())
 {

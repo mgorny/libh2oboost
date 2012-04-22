@@ -18,6 +18,7 @@ namespace h2o
 		class H2O : private ::h2o::H2O
 		{
 		public:
+			H2O();
 			H2O(quantity::MPa p, quantity::K T);
 			H2O(quantity::K T, quantity::dimless x);
 			H2O(quantity::MPa p, quantity::dimless x);
