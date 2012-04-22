@@ -15,6 +15,8 @@ namespace h2o
 {
 	namespace boost
 	{
+		typedef ::h2o::Region Region;
+
 		class H2O : private ::h2o::H2O
 		{
 			H2O(::h2o::H2O other);
@@ -28,6 +30,8 @@ namespace h2o
 			H2O(quantity::MPa p, quantity::kJ_kgK s);
 			H2O(quantity::kJ_kg h, quantity::kJ_kgK s);
 			H2O(quantity::kg_m3 rho, quantity::K T);
+
+			Region region() const;
 
 			quantity::MPa p() const;
 			quantity::K T() const;

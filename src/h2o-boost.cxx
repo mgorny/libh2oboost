@@ -55,6 +55,11 @@ H2O::H2O(quantity::kg_m3 rho, quantity::K T)
 {
 }
 
+Region H2O::region() const
+{
+	return ::h2o::H2O::region();
+}
+
 quantity::MPa H2O::p() const
 {
 	return quantity::MPa(::h2o::H2O::p() * unit::MPa);
