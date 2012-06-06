@@ -42,6 +42,9 @@ namespace h2o
 			quantity::kJ_kg u() const;
 			quantity::kJ_kg h() const;
 			quantity::kJ_kgK s() const;
+			quantity::kJ_kgK cp() const;
+			quantity::kJ_kgK cv() const;
+			quantity::m_s w() const;
 
 			H2O expand(quantity::MPa pout) const;
 			H2O expand(quantity::MPa pout, quantity::dimless eta) const;

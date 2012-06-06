@@ -100,6 +100,21 @@ quantity::kJ_kgK H2O::s() const
 	return quantity::kJ_kgK(::h2o::H2O::s() * unit::kJ_kgK);
 }
 
+quantity::kJ_kgK H2O::cp() const
+{
+	return quantity::kJ_kgK(::h2o::H2O::cp() * unit::kJ_kgK);
+}
+
+quantity::kJ_kgK H2O::cv() const
+{
+	return quantity::kJ_kgK(::h2o::H2O::cv() * unit::kJ_kgK);
+}
+
+quantity::m_s H2O::w() const
+{
+	return quantity::m_s(::h2o::H2O::w() * unit::m_s);
+}
+
 H2O H2O::expand(quantity::MPa pout) const
 {
 	return ::h2o::H2O::expand(pout.value());

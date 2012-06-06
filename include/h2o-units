@@ -20,6 +20,7 @@
 #include <boost/units/systems/si/mass_density.hpp>
 #include <boost/units/systems/si/pressure.hpp>
 #include <boost/units/systems/si/temperature.hpp>
+#include <boost/units/systems/si/velocity.hpp>
 #include <boost/units/systems/temperature/celsius.hpp>
 
 namespace h2o
@@ -41,6 +42,7 @@ namespace h2o
 					< ::boost::units::si::temperature > K;
 			typedef ::boost::units::si::dimensionless dimless;
 			typedef ::boost::units::si::mass_density kg_m3;
+			typedef ::boost::units::si::velocity m_s;
 
 			typedef ::boost::units::unit
 			<
@@ -108,6 +110,7 @@ namespace h2o
 			static const unit_type::m3_kg m3_kg;
 			static const unit_type::kJ_kg kJ_kg;
 			static const unit_type::kJ_kgK kJ_kgK;
+			static const unit_type::m_s m_s;
 
 			// auxiliary units
 
@@ -126,6 +129,7 @@ namespace h2o
 			typedef ::boost::units::quantity<unit_type::m3_kg> m3_kg;
 			typedef ::boost::units::quantity<unit_type::kJ_kg> kJ_kg;
 			typedef ::boost::units::quantity<unit_type::kJ_kgK> kJ_kgK;
+			typedef ::boost::units::quantity<unit_type::m_s> m_s;
 
 			// auxiliary units
 
