@@ -54,4 +54,4 @@ namespace h2o
 
 #endif /*_H2O_BOOST_HXX*/
 
-// vim:syn=cpp
+// vim:ft=cpp

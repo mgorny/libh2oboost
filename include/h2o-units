@@ -142,4 +142,4 @@ namespace h2o
 
 #endif /*_H2O_UNITS_HXX*/
 
-// vim:syn=cpp
+// vim:ft=cpp
