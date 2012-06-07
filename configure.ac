@@ -1,5 +1,8 @@
 AC_PREREQ([2.60])
-AC_INIT([libh2oboost], [0])
+AC_INIT([libh2oboost], [0],
+		[https://bitbucket.org/mgorny/libh2oboost/issues/],
+		[libh2oboost],
+		[https://bitbucket.org/mgorny/libh2oboost/])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([1.6 foreign dist-bzip2 subdir-objects])
